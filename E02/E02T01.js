@@ -10,10 +10,10 @@ function isLeapYear(aYear) {
 
 function displayResult() {
 
-    var exampleYear = 2020;
+    let exampleYear = document.getElementById("aYear").value;
   
-    document.getElementById("sisalto").innerHTML = isLeapYear(exampleYear);
+    document.getElementById("sisalto").innerHTML =
+        isLeapYear(exampleYear) ? "On karkausvuosi." : "Ei ole karkausvuosi.";
   
   }
 
-window.onload = displayResult;  
