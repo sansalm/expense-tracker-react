@@ -1,7 +1,16 @@
+
+
 function convertOuncesToGrams (a, b, c) {
     
-    console.log(a, b, c);
+    a.unit = 'gram'
+    a.weight = (parseFloat(((a.weight * 28.35)*100)/100)).toFixed(2);
     
+    c.unit = 'gram'
+    c.weight = (parseFloat(((c.weight * 28.35)*100)/100)).toFixed(2);
+
+    console.log(a)
+    console.log(b)
+    console.log(c)
 } 
 
 var measurements = [{ batchid: 434, unit: 'ounce', weight: 12.21 }, 
