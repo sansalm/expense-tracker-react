@@ -2,14 +2,14 @@
 // Parenthesis around argument theDigits are not necessary, since
 // there is only one
 const isValidRegisterNumber = (theLetters, theDigits) => {
-    return /^(?!.*(?:W))([A-Z]\w{2,3}|[A-Z]\w[A-Z])+$/.test(theLetters), // Constant regular expression 
-        /^(0|[1-9]\d{1,3}|[1-9]\d|[1-9]?)$/.test(theDigits);       //(limited with backslashes)
+    return [/^(?!.*(?:W))([A-Z]\w|[A-Z]{2,3}|)+$/.test(theLetters), // Constant regular expression 
+        /^(0|[1-9]\d{1,3}?)$/.test(theDigits)];       //(limited with backslashes)
                                                             
 
 }
+
 // '|' = 'or' operator
 // ^ indicates where the string starts
-
 
 
 function buildRegisterNumber(theLetters, theDigits) {
@@ -39,10 +39,10 @@ function buildRegisterNumber(theLetters, theDigits) {
 function displayResult() {
 
     
-let theDigits = '113' 
-let theLetters = 'WOO'
+    let theDigits = '113';
+    let theLetters = 'WOO';
 
-    document.getElementById("sisalto").innerHTML = isValidRegisterNumber(theLetters, theDigits);
+    document.getElementById("sisalto").innerHTML = buildRegisterNumber(theLetters, theDigits);
 
 }
 
