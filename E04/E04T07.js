@@ -23,7 +23,6 @@ function buildRegisterNumber(theLetters, theDigits, x, y) {
         console.log(e.name + ' : ' + e.message);
     }
 
-    
     if (x === true && y === true) {
         console.log("Valid register number")
         console.log(theLetters + '-' + theDigits)
@@ -35,7 +34,7 @@ function buildRegisterNumber(theLetters, theDigits, x, y) {
 function displayResult() {
 
     let theLetters = 'OOO';
-    let theDigits = '113';
+    let theDigits = '1134';
     
     let x, y; 
     x = /^(?!.*(?:W))([A-Z]\w|[A-Z]{2,3}|)+$/.test(theLetters);
