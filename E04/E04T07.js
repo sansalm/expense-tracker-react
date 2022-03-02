@@ -32,14 +32,12 @@ function buildRegisterNumber(theLetters, theDigits, x, y) {
 
 function displayResult() {
 
-    let theLetters = 'WOO';
+    let theLetters = 'OOO';
     let theDigits = '113';
     
     let x, y; 
     x = /^(?!.*(?:W))([A-Z]\w|[A-Z]{2,3}|)+$/.test(theLetters);
     y = /^(0|[1-9]\d{1,3}|[1-9]?)$/.test(theDigits);
-
-    //buildRegisterNumber(theLetters, theDigits);
 
     document.getElementById("sisalto").innerHTML = buildRegisterNumber(theLetters, theDigits, x, y);
 

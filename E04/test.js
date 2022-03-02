@@ -1,27 +1,57 @@
-function buildRegisterNumber(theLetters, theDigits, x, y){
-    try {
-        if (x === false){
-            throw new Error ("Invalid register number letters")
-        }
-        if (y === false){
-            throw new Error ("Invalid register number digits")
-        }
-        if (x === true && y === true) {
-            console.log("Register number is correct");
-            console.log(theLetters + "-" + theDigits)
-        }
-        } catch(e) {
-            console.log(e);
-        }
+function isInteger(aYear) {
+
+    if (aYear === parseInt(aYear, 10)){
+      return true;
     }
-
-function main(){
-    let theDigits = "098";
-    let theLetters = "POO";
-    let x, y;
-    x = /^(?!.*(?:W))([A-Z]\w|[A-Z]{2,3}|)+$/.test(theLetters);
-    y = /^(0|[1-9]\d{1,3}?)$/.test(theDigits);
-    buildRegisterNumber(theLetters, theDigits, x, y);
-}
-
-main();
+  
+    return false;
+  
+  }
+  
+  function isLeapYear(aYear) {
+  
+      if (aYear === undefined || aYear === null || aYear === '') {
+        throw new Error('Argument aYear is missing.');
+      }
+  
+      if (!isInteger(aYear)) {
+        throw new Error('Argument aYear is not integer.');
+      }
+  
+      if (aYear % 4 === 0 && (aYear % 100 !== 0 || aYear % 400 === 0)) {
+          return true;
+      }
+  
+  
+      return false;
+  
+  }
+  
+  
+  
+  function tryIsLeapYear(aYear) {
+  
+    try {
+  
+  
+      return isLeapYear(aYear);
+  
+    } catch (e) {
+  
+      console.error(e.name + ' : ' + e.message);
+  
+  
+      }
+  
+    }
+  
+  
+  function displayResult() {
+  
+      let aYear = 2021;
+  
+      document.getElementById("sisalto").innerHTML = tryIsLeapYear(aYear);
+  
+    }
+  
+  displayResult();
