@@ -1,36 +1,30 @@
 // Arrow function, accepts numbers from theDigits
 // Parenthesis around argument theDigits are not necessary, since
 // there is only one
-const isValidRegisterNumber = (theLetters, theDigits) => {
-    return [/^(?!.*(?:W))([A-Z]\w|[A-Z]{2,3}|)+$/.test(theLetters), // Constant regular expression 
-        /^(0|[1-9]\d{1,3}?)$/.test(theDigits)];       //(limited with backslashes)
-                                                            
-
-}
-
-// '|' = 'or' operator
-// ^ indicates where the string starts
 
 
-function buildRegisterNumber(theLetters, theDigits) {
+function buildRegisterNumber(theLetters, theDigits, x, y) {
 
     try {
 
-        if (theLetters === false) {
+        if (x === false) {
             throw new Error('Invalid register number letters.');
 
         }
 
-        if (theDigits === false) {
+        if (y === false) {
             throw new Error('Invalid register number digits.')
 
         }
 
-        return isValidRegisterNumber(theLetters, theDigits);
+        if (x === true && y === true) {
+            console.log("Valid register number")
+            console.log(theLetters + '-' + theDigits)
+        }
 
     } catch (e) {
 
-        console.error(e.name + ' : ' + e.message);
+        console.log(e.name + ' : ' + e.message);
     }
 
 }
@@ -38,20 +32,17 @@ function buildRegisterNumber(theLetters, theDigits) {
 
 function displayResult() {
 
-    
-    let theDigits = '113';
     let theLetters = 'WOO';
+    let theDigits = '113';
+    
+    let x, y; 
+    x = /^(?!.*(?:W))([A-Z]\w|[A-Z]{2,3}|)+$/.test(theLetters);
+    y = /^(0|[1-9]\d{1,3}|[1-9]?)$/.test(theDigits);
 
-    document.getElementById("sisalto").innerHTML = buildRegisterNumber(theLetters, theDigits);
+    //buildRegisterNumber(theLetters, theDigits);
+
+    document.getElementById("sisalto").innerHTML = buildRegisterNumber(theLetters, theDigits, x, y);
 
 }
 
 displayResult();
-
-
-//FOR TESTING 
-
-//let theLetters = /^(?!.*(?:W))([A-Z]\w{2,3}|[A-Z]\w[A-Z])+$/;
-
-//console.log(theLetters.test('OOO'))
-//buildRegisterNumber(theLetters);

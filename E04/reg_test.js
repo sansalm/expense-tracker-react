@@ -7,7 +7,7 @@ console.log('One capital letter (false):', theLetters.test('P'));   // With long
 console.log('Small letters (false):', theLetters.test('pii'));      // the single capital letter returned 'true'.
 
 
-let theNumbers = /^(0|[1-9]\d{1,3}?)$/;
+let theNumbers = /^(0|[1-9]\d{1,3}|[1-9]?)$/;
 
 console.log("Valid numbers (true):", theNumbers.test('123'));
 console.log("With leading zero (false):", theNumbers.test('012'));
