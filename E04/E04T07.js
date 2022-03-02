@@ -16,15 +16,17 @@ function buildRegisterNumber(theLetters, theDigits, x, y) {
             throw new Error('Invalid register number digits.')
 
         }
-
-        if (x === true && y === true) {
-            console.log("Valid register number")
-            console.log(theLetters + '-' + theDigits)
-        }
+        
 
     } catch (e) {
 
         console.log(e.name + ' : ' + e.message);
+    }
+
+    
+    if (x === true && y === true) {
+        console.log("Valid register number")
+        console.log(theLetters + '-' + theDigits)
     }
 
 }

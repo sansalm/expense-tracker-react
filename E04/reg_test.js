@@ -1,7 +1,7 @@
 let theLetters = /^(?!.*(?:W))([A-Z]\w|[A-Z]{2,3}|)+$/;
 
 console.log('Valid letters (true):', theLetters.test('OOO'));
-console.log('With ´W´ (false):', theLetters.test('WOO'));
+console.log('With "W" (false):', theLetters.test('WOO'));
 console.log('Two capital letters (true):', theLetters.test('PA'));
 console.log('One capital letter (false):', theLetters.test('P'));   // With long regular expressions such as shown during class
 console.log('Small letters (false):', theLetters.test('pii'));      // the single capital letter returned 'true'.
