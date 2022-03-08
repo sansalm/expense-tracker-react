@@ -1,5 +1,5 @@
 let blueBtn = document.getElementById('blue')
-let greyBtn = document.getElementById('grey')
+let greyBtn = document.getElementById('gray')
 let whiteBtn = document.getElementById('white')
 
 
@@ -14,7 +14,7 @@ blueBtn.addEventListener('click', event => {
   greyBtn.addEventListener('click', event => {
 
     if (event.target.nodeName == "BUTTON") {
-      document.body.style.backgroundColor = 'grey';
+      document.body.style.backgroundColor = 'gray';
       
     }
   });

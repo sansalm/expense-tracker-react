@@ -27,28 +27,34 @@ you can call it from your event handler, and possibly also once when starting, t
 You can change the balloon to an explosion by replacing the text node with another one (using replaceChild) 
 or by setting the textContent property of its parent node to a new string.*/
 
-let og_size = document.querySelector('p');
+let balloon = document.getElementById('balloon');
+let balloon_size;
 
-    window.addEventListener("keydown", e => {
+function explodingBalloon(size) {
 
-    let emoji = document.getElementById('balloon')
-    let newEmoji = document.createTextNode('💥');
+    balloon_size = size;
+    balloon.style.fontSize = balloon_size + 'px';
 
-    let size = og_size.style.fontSize.replace('px', '');
+    document.addEventListener('keydown', balloonSize);
+}
 
-    size = size == '' ? '50' : size; // size may not be initialized, so default to our intended starting value!
-    size = parseInt(size);
+function balloonSize(e) {
 
-    if (e.key == "ArrowUp") {
-        og_size.style.fontSize = (size + 10) + 'px';
-        
-        if (og_size.style.fontSize === 60) {
-            document.body.replaceChild(newEmoji, emoji.childNodes[0])
-        }
-
-    } else {
-        og_size.style.fontSize = (size - 10) + 'px';
+    if (e.key == 'ArrorDown') {
+        explodingBalloon(balloon_size - 5);
     }
 
-});
+    else if (e.key == 'ArrowUp') {
+
+        if (balloon_size > 200) {
+            document.getElementById('balloon').innerHTML = '💥';
+            document.removeEventListener('keydown', balloonSize);
+
+        } else {
+            explodingBalloon(balloon_size + 5)
+        }
+    }
+}
+
+explodingBalloon(50)
 
