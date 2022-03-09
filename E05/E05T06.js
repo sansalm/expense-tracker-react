@@ -31,6 +31,7 @@ let balloon = document.getElementById('balloon');
 let balloon_size;
 
 function explodingBalloon(size) {
+    
 
     balloon_size = size;
     balloon.style.fontSize = balloon_size + 'px';
