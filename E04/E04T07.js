@@ -33,7 +33,7 @@ function buildRegisterNumber(theLetters, theDigits, x, y) {
 
 function displayResult() {
 
-    let theLetters = 'OOO';
+    let theLetters = 'WOO';
     let theDigits = '1134';
     
     let x, y; 

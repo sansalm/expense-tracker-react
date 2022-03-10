@@ -17,6 +17,3 @@ console.log("With one number (true):", theNumbers.test('1'));
 console.log("With single zero (false):", theNumbers.test('0'))
 console.log("More than 3 numbers (false):", theNumbers.test('6666'))
 
-
-let fake = /^(0|[1-9]\d{1,3}?)$/;
-console.log("ffff (true)", fake.test('200'));
