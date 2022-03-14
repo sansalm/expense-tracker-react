@@ -41,7 +41,7 @@ function explodingBalloon(size) {
 
 function balloonSize(e) {
 
-    if (e.key == 'ArrorDown') {
+    if (e.key == 'ArrowDown') {
         explodingBalloon(balloon_size - 5);
     }
 
