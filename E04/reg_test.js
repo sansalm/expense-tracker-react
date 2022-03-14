@@ -8,7 +8,8 @@ console.log('Small letters (false):', theLetters.test('pii'));
 console.log('More than 3 letters (false):', theLetters.test('AAAA'))      // the single capital letter returned 'true'.
 
 
-let theNumbers = /^([1-9]\d{0,2}?)$/;
+//let theNumbers = /^([1-9]\d{0,2}?)$/; molemmat toimii
+let theNumbers = /^([1-9]\d{2}|[1-9]\d|[1-9])$/; //molemmat toimii
 
 console.log("\nValid numbers (true):", theNumbers.test('200'));
 console.log("With leading zero (false):", theNumbers.test('012'));
