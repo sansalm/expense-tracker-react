@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <form>
+  <input type="text" name="server" id="saveServer"/>
+</form>
+  <script>
+
+  var input1 = document.getElementById("saveServer");
+
+  function setitem() {
+    localStorage.setItem("server", input1.value);
+    console.log(localStorage.getItem("server"));
+    }
+
+  console.log(localStorage.getItem("server"));
+  input1.addEventListener("blur", setitem);
+
+  </script>
+</body>
+</html>
