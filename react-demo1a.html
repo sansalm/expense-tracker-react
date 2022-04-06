@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fi">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>React</title>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+</head>
+
+<body>
+
+  <div id="react-root"></div>
+
+  <script>
+
+    var threatsList = () => {
+
+      return React.createElement(
+        'section',
+        { 'id': 'threats' },
+        React.createElement('h2', null, 'SQL Injection'),
+        React.createElement('ul', null, 
+            React.createElement('li', { className: 'single-threat'}, 'String Injection'),
+            React.createElement('li', { className: 'single-threat'}, 'Numeric Injection'),
+            React.createElement('li', { className: 'single-threat'}, 'Blind Injection')
+        )
+      );
+    };
+
+    ReactDOM.render(
+      React.createElement(threatsList),
+      document.getElementById('react-root')
+    );
+
+  </script>
+
+</body>
+
+</html>

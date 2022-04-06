@@ -8,7 +8,7 @@ export const setPriceList = priceList => {
 
 
 export const getPrice = (itemIdm, quantity) => {
-    return 200.49;
+    return;
 
 };
 
