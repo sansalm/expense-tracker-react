@@ -44,13 +44,13 @@ export const AddTransaction = () => {
 
                 <div className="form-control">
                     <label htmlFor="volume">Refuel volume</label>
-                    <input type="volume" value={volume} onChange={(e) => setVolume(e.target.value)}
+                    <input type="text" value={volume} onChange={(e) => setVolume(e.target.value)}
                         placeholder="Enter refuel volume..." />
                 </div>
 
                 <div className="form-control">
                     <label htmlFor="distance">Distance driven with refueling</label>
-                    <input type="distance" value={distance} onChange={(e) => setDistance(e.target.value)}
+                    <input type="number" value={distance} onChange={(e) => setDistance(e.target.value)}
                         placeholder="Enter distance..." />
                 </div>
 
