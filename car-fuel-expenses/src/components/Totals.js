@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
 
 export const Totals = () => {
-    const { transactions } = useContext(GlobalContext);
+    const { cars } = useContext(GlobalContext);
 
-    const totSum = transactions.map(transaction => transaction.amount);
-    const totDistances = transactions.map(transaction => transaction.distance);
-    const totVolumes = transactions.map(transaction => transaction.volume)
+    const totSum = cars.map(transaction => transaction.amount);
+    const totDistances = cars.map(transaction => transaction.distance);
+    const totVolumes = cars.map(transaction => transaction.volume)
 
 
     const totalSum = totSum

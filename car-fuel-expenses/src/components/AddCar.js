@@ -13,7 +13,7 @@ export const AddCar = () => {
     const onSubmit = e => {
         e.preventDefault();
 
-        const newTransaction = {
+        const newCar = {
             id: Math.floor(Math.random() * 100000000),
             text: text,
             amount: +amount,
@@ -23,8 +23,8 @@ export const AddCar = () => {
             
         }
         
-        addTransaction(newTransaction);
-        return newTransaction.text
+        addTransaction(newCar);
+        return newCar.text
 
 
     }

@@ -3,7 +3,7 @@ import AppReducer from './AppReducer';
 
 // Initial state
 const initialState = {
-    transactions: [
+    cars: [
         { id: 1, text: 'Car1', amount: 20, volume: 20, distance: 200 },
         { id: 2, text: 'Car2', amount: 300, volume: 20, distance: 200 },
         { id: 3, text: 'Car3', amount: 10, volume: 20, distance: 200 },
@@ -21,24 +21,24 @@ export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
     // Actions that make calls to reducer
-    function deleteTransaction(id) {
+    function deleteCar(id) {
         dispatch({
             type: 'DELETE_TRANSACTION',
             payload: id
         });
     }
 
-    function addTransaction(transaction) {
+    function addCar(car) {
         dispatch({
             type: 'ADD_TRANSACTION',
-            payload: transaction
+            payload: car
         });
     }
 
     return (<GlobalContext.Provider value={{
-        transactions: state.transactions,
-        deleteTransaction,
-        addTransaction,
+        cars: state.cars,
+        deleteCar,
+        addCar,
     }}>
         {children}
     </GlobalContext.Provider>);

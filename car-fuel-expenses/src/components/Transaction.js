@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState';
 
-export const AddCar = ({ transaction: car }) => {
-    const { deleteTransaction } = useContext(GlobalContext);
+export const NewCar = ({ car }) => {
+    const { deleteCar } = useContext(GlobalContext);
 
     return (
         <li className={car.amount}>
@@ -13,7 +13,7 @@ export const AddCar = ({ transaction: car }) => {
             <span>{Math.abs(car.distance)} km</span>
 
             <button
-                onClick={() => deleteTransaction(car.id)} className="delete-btn">
+                onClick={() => deleteCar(car.id)} className="delete-btn">
                 x
             </button>
         </li>

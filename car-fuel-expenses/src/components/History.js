@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
-import { AddCar } from './Transaction';
+import { NewCar } from './Transaction';
 
 export const History = () => {
-    const { transactions } = useContext(GlobalContext);
+    const { cars } = useContext(GlobalContext);
     
     return (
         <>
@@ -24,7 +24,7 @@ export const History = () => {
                 </div>
             
             <ul className="list li">
-                {transactions.map(transaction => (<AddCar key={transaction.id} transaction={transaction} />))}
+                {cars.map(car => (<NewCar key={car.id} car={car} />))}
             </ul>
     
         </>

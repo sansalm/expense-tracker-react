@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
-import { AddCar } from './Transaction';
+import { NewCar } from './Transaction';
 
 export const CarSpecs = () => {
-    const { transactions } = useContext(GlobalContext);
+    const { cars } = useContext(GlobalContext);
 
-    {transactions.map(transaction => (<AddCar key={transaction.text} transaction={transaction.text} />))}
+    {cars.map(car => (<NewCar key={car.text} car={car.text} />))}
 
 
 
