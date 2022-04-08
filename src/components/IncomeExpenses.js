@@ -4,14 +4,14 @@ import { GlobalContext } from '../context/GlobalState'
 export const IncomeExpenses = () => {
     const { transactions } = useContext(GlobalContext);
 
-    const amounts = transactions.map(transaction => transaction.amount);
+    const prices = transactions.map(transaction => transaction.price);
 
-    const income = amounts
+    const income = prices
         .filter(item => item > 0)
         .reduce((acc, item) => (acc += item), 0)
         .toFixed(2);
 
-    const expense = (amounts
+    const expense = (prices
         .filter(item => item < 0)
         .reduce((acc, item) => (acc += item), 0) * -1)
         .toFixed(2);
