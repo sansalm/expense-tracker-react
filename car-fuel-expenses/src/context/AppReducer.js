@@ -1,4 +1,4 @@
-import { AddTransaction } from "../components/AddTransaction";
+import { AddCar } from "../components/AddCar";
 
 export default (state, action) => {
     switch (action.type) {

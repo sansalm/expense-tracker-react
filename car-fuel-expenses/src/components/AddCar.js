@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState';
 
-export const AddTransaction = () => {
+export const AddCar = () => {
 
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
@@ -19,11 +19,12 @@ export const AddTransaction = () => {
             amount: +amount,
             volume: +volume,
             distance: +distance
-        }
 
+            
+        }
         
         addTransaction(newTransaction);
-    
+        return newTransaction.text
 
 
     }
@@ -42,7 +43,6 @@ export const AddTransaction = () => {
                 <div className="form-control">
                     <label htmlFor="amount"
                     >Price of refueling <br />
-                        (per liter)
                     </label>
                     <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)}
                         placeholder="Enter price of refueling..." />
