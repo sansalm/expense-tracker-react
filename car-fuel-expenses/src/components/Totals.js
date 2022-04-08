@@ -4,9 +4,9 @@ import { GlobalContext } from '../context/GlobalState'
 export const Totals = () => {
     const { cars } = useContext(GlobalContext);
 
-    const totSum = cars.map(transaction => transaction.amount);
-    const totDistances = cars.map(transaction => transaction.distance);
-    const totVolumes = cars.map(transaction => transaction.volume)
+    const totSum = cars.map(car => car.amount);
+    const totDistances = cars.map(car => car.distance);
+    const totVolumes = cars.map(car => car.volume)
 
 
     const totalSum = totSum

@@ -7,7 +7,7 @@ export const NewCar = ({ car }) => {
     return (
         <li className={car.amount}>
             
-            {car.text} 
+            <span>{car.text}</span>
             <span>{Math.abs(car.amount)} €</span>
             <span>{car.volume} l</span>
             <span>{Math.abs(car.distance)} km</span>

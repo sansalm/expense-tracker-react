@@ -4,13 +4,16 @@ import { NewCar } from './Transaction';
 
 export const History = () => {
     const { cars } = useContext(GlobalContext);
+
     
+
     return (
         <>
             <h3>History</h3>
-                <div className="header-container">
+                <div className="inc-exp-container">
                     <div>
-                        <h3>Car name</h3>
+                        <h4>Car name</h4>
+                        <p className='money minus'>kulli</p>
                     </div>
                     <div>
                         <h3>Expenses</h3>
@@ -26,7 +29,6 @@ export const History = () => {
             <ul className="list li">
                 {cars.map(car => (<NewCar key={car.id} car={car} />))}
             </ul>
-    
         </>
     )
 }
