@@ -7,7 +7,7 @@ export const CarSpecs = () => {
 
     {cars.map(car => (<NewCar key={car.text} car={car.text} />))}
 
-
+    
 
     return (
         <>

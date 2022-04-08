@@ -8,7 +8,7 @@ export const AddCar = () => {
     const [volume, setVolume] = useState(0);
     const [distance, setDistance] = useState(0);
 
-    const { addTransaction } = useContext(GlobalContext);
+    const { addTransaction: addCar } = useContext(GlobalContext);
 
     const onSubmit = e => {
         e.preventDefault();
@@ -18,12 +18,14 @@ export const AddCar = () => {
             text: text,
             amount: +amount,
             volume: +volume,
-            distance: +distance
+            distance: +distance,
+            cars: []
 
             
         }
         
-        addTransaction(newCar);
+        addCar(newCar);
+        newCar.cars.push(newCar)
         return newCar.text
 
 

@@ -5,7 +5,7 @@ import { NewCar } from './Transaction';
 export const History = () => {
     const { cars } = useContext(GlobalContext);
 
-    
+    console.log(cars['text'])
 
     return (
         <>
@@ -13,7 +13,7 @@ export const History = () => {
                 <div className="inc-exp-container">
                     <div>
                         <h4>Car name</h4>
-                        <p className='money minus'>kulli</p>
+                        <p className='money minus'>car</p>
                     </div>
                     <div>
                         <h3>Expenses</h3>
