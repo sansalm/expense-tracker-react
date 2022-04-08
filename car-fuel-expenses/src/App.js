@@ -1,9 +1,10 @@
 import './App.css';
 import { Header } from './components/Header';
 import { Balance } from './components/Balance';
-import { IncomeExpenses } from './components/IncomeExpenses';
-import { TransactionList } from './components/TransactionList';
+import { Totals } from './components/Totals';
+import { History } from './components/History';
 import { AddTransaction } from './components/AddTransaction';
+import { CarSpecs } from './components/Specifics';
 
 import { GlobalProvider } from './context/GlobalState';
 
@@ -13,9 +14,11 @@ function App() {
       <Header />
       <div className='container'>
         <Balance />
-        <IncomeExpenses />
-        <TransactionList />
+        <Totals />
+        <CarSpecs />
+        <History />
         <AddTransaction />
+        
       </div>
     </GlobalProvider>
   );

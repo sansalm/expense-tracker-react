@@ -7,9 +7,11 @@ const initialState = {
         { id: 1, text: 'Car1', amount: 20, volume: 20, distance: 200 },
         { id: 2, text: 'Car2', amount: 300, volume: 20, distance: 200 },
         { id: 3, text: 'Car3', amount: 10, volume: 20, distance: 200 },
-        { id: 4, text: 'Car4', amount: 150, volume: 20, distance: 200 }
+        { id: 4, text: 'Car4', amount: 150, volume: 20, distance: 200 },
+        { id: 5, text: 'Car4', amount: 200, volume: 20, distance: 200 }
     ]
 }
+
 
 // Create context
 export const GlobalContext = createContext(initialState);

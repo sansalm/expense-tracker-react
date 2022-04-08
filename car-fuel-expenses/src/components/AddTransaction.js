@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState';
 
 export const AddTransaction = () => {
+
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
     const [volume, setVolume] = useState(0);
@@ -14,14 +15,19 @@ export const AddTransaction = () => {
 
         const newTransaction = {
             id: Math.floor(Math.random() * 100000000),
-            text,
+            text: text,
             amount: +amount,
             volume: +volume,
             distance: +distance
         }
 
+        
         addTransaction(newTransaction);
+    
+
+
     }
+
 
     return (
         <>
@@ -54,7 +60,7 @@ export const AddTransaction = () => {
                         placeholder="Enter distance..." />
                 </div>
 
-                <button className="btn">Add refuel expense</button>
+                <button className="btn" >Add refuel expense</button>
             </form>
         </>
     )

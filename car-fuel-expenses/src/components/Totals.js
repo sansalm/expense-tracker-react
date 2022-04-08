@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
 
-export const IncomeExpenses = () => {
+export const Totals = () => {
     const { transactions } = useContext(GlobalContext);
 
     const totSum = transactions.map(transaction => transaction.amount);
     const totDistances = transactions.map(transaction => transaction.distance);
     const totVolumes = transactions.map(transaction => transaction.volume)
+
 
     const totalSum = totSum
         .filter(item => item > 0)
