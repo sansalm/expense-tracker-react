@@ -4,10 +4,12 @@ import AppReducer from './AppReducer';
 // Initial state
 const initialState = {
     transactions: [
-        { id: 1, name: 'Car1', price: -20, amount: 20, distance: 200 },
-        { id: 2, name: 'Car2', price: -300, amount: 20, distance: 200 },
-        { id: 3, name: 'Car3', price: -10, amount: 20, distance: 200 },
-        { id: 4, name: 'Car4', price: -150, amount: 20, distance: 200 }
+        { id: 1, name: 'Car1', price: -100, amount: 20, distance: 200 },
+        { id: 2, name: 'Car2', price: -100, amount: 20, distance: 200 },
+        { id: 3, name: 'Car3', price: -100, amount: 20, distance: 200 },
+        { id: 4, name: 'Car4', price: -100, amount: 20, distance: 200 },
+        { id: 5, name: 'Car4', price: -100, amount: 20, distance: 200 },
+        { id: 6, name: 'Car4', price: -100, amount: 20, distance: 200 },
     ]
 }
 

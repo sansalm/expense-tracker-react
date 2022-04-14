@@ -10,7 +10,7 @@ export const Transaction = ({ transaction }) => {
         <li className={transaction.price < 0 ? 'minus' : 'plus'}>
             
             {transaction.name} 
-            <span>{sign}${Math.abs(transaction.price)}</span>
+            <span>{sign}{Math.abs(transaction.price).toFixed(2)} €</span>
             <span>{transaction.amount} L</span>
             <span>{transaction.distance} km</span>
 
