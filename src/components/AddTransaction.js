@@ -16,8 +16,8 @@ export const AddTransaction = () => {
             id: Math.floor(Math.random() * 100000000),
             name,
             price: +price,
-            amount,
-            distance
+            amount: +amount,
+            distance: +distance
         }
 
         addTransaction(newTransaction);

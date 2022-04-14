@@ -3,34 +3,32 @@ import { GlobalContext } from '../context/GlobalState'
 
 export const CarTotals = () => {
     const { transactions } = useContext(GlobalContext);
-    
-    const calculations = [...transactions];
-    
-    let uniqueNames = [calculations[0].name];
 
-    let allUniqueItems = [calculations[0]];
-    calculations.forEach((calculation, index, array) => {
-        if (index > 0) {
-            let nameIndex = (Array.from(uniqueNames).indexOf(calculation.name));
-            if (nameIndex == -1) {
-                allUniqueItems.push(calculation);
-                uniqueNames.push(calculation.name);
+    let sumsAndDuplicates = [];
+
+    transactions.forEach((element, index, array) => {
+        let obj = sumsAndDuplicates.find((o, i) => {
+            if (o.name == element.name) {
+                sumsAndDuplicates[i].price += element.price;
+                sumsAndDuplicates[i].amount += element.amount;
+                sumsAndDuplicates[i].distance += element.distance;
             }
-            else {
-                allUniqueItems[nameIndex].price += calculation.price;
-                allUniqueItems[nameIndex].amount += calculation.amount;
-                allUniqueItems[nameIndex].distance += calculation.distance;
-            }
-        }
+        });
+        sumsAndDuplicates.push({
+            name: element.name,
+            price: element.price,
+            amount: element.amount,
+            distance: element.distance,
+        });
     });
 
-    console.log(allUniqueItems);
+    console.log(sumsAndDuplicates);
 
     return (
         <div className="inc-exp-container">
             <div>
                 <h4>Totals per car</h4>
-                <p className="money plus">{uniqueNames}</p>
+                <p className="money plus">{transactions[0].name}</p>
             </div>
         </div>
     )
