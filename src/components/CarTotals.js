@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
+import { CarTotal } from './CarTotal';
 
 export const CarTotals = () => {
     const { transactions } = useContext(GlobalContext);
@@ -32,11 +33,12 @@ export const CarTotals = () => {
     console.log(uniqueTransactions);
 
     return (
-        <div className="inc-exp-container">
-            <div>
-                <h4>Totals per car</h4>
-                <p className="money plus">placeholder</p>
-            </div>
+        <div>
+            <h3>Totals per car</h3>
+            <ul className='list'>
+                {uniqueTransactions.map(element => (<CarTotal key={element.name}
+                    element={element} />))}
+            </ul>
         </div>
     )
 }
