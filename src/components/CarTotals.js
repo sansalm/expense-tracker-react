@@ -4,25 +4,31 @@ import { GlobalContext } from '../context/GlobalState'
 export const CarTotals = () => {
     const { transactions } = useContext(GlobalContext);
 
-    let sumsAndDuplicates = [];
+    let uniqueTransactions = [];
 
-    transactions.forEach((element, index, array) => {
-        let obj = sumsAndDuplicates.find((o, i) => {
-            if (o.name == element.name) {
-                sumsAndDuplicates[i].price += element.price;
-                sumsAndDuplicates[i].amount += element.amount;
-                sumsAndDuplicates[i].distance += element.distance;
-            }
-        });
-        sumsAndDuplicates.push({
-            name: element.name,
-            price: element.price,
-            amount: element.amount,
-            distance: element.distance,
+    transactions.forEach(({ id, name, price, amount, distance }, index) => {
+
+
+        uniqueTransactions.forEach((element, index) => {
+            
+            
+            let nameToCheck = element.name;
+            
+            
+            if (nameToCheck == name) {
+                element.price += price;
+                element.amount += amount;
+                element.distance += distance;
+            } 
+        }) || uniqueTransactions.push({
+            name: name,
+            price: price,
+            amount: amount,
+            distance: distance,
         });
     });
 
-    console.log(sumsAndDuplicates);
+    console.log(uniqueTransactions);
 
     return (
         <div className="inc-exp-container">
