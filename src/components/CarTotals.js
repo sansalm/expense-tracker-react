@@ -35,7 +35,7 @@ export const CarTotals = () => {
         <div className="inc-exp-container">
             <div>
                 <h4>Totals per car</h4>
-                <p className="money plus">{transactions[0].name}</p>
+                <p className="money plus">placeholder</p>
             </div>
         </div>
     )
