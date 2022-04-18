@@ -7,25 +7,37 @@ export const CarTotals = () => {
     let uniqueTransactions = [];
 
     transactions.forEach(({ id, name, price, amount, distance }, index) => {
-
-
+        if (index === 0) {
+            uniqueTransactions.push({
+                name: name,
+                price: price,
+                amount: amount,
+                distance: distance,
+            });
+        }
         uniqueTransactions.forEach((element, index) => {
-            
-            
+            if (index === 0) {
+                return;
+            }
             let nameToCheck = element.name;
-            
-            
-            if (nameToCheck == name) {
+
+            if (nameToCheck === name) {
                 element.price += price;
                 element.amount += amount;
                 element.distance += distance;
-            } 
-        }) || uniqueTransactions.push({
-            name: name,
-            price: price,
-            amount: amount,
-            distance: distance,
+            } else {
+                return;
+            }
         });
+        let obj = uniqueTransactions.find(o => o.name === name);
+        if (!obj && index != 0) {
+            uniqueTransactions.push({
+                name: name,
+                price: price,
+                amount: amount,
+                distance: distance,
+            });
+        }
     });
 
     console.log(uniqueTransactions);
