@@ -7,18 +7,7 @@ export const CarTotals = () => {
     let uniqueTransactions = [];
 
     transactions.forEach(({ id, name, price, amount, distance }, index) => {
-        if (index === 0) {
-            uniqueTransactions.push({
-                name: name,
-                price: price,
-                amount: amount,
-                distance: distance,
-            });
-        }
         uniqueTransactions.forEach((element, index) => {
-            if (index === 0) {
-                return;
-            }
             let nameToCheck = element.name;
 
             if (nameToCheck === name) {
@@ -30,7 +19,7 @@ export const CarTotals = () => {
             }
         });
         let obj = uniqueTransactions.find(o => o.name === name);
-        if (!obj && index != 0) {
+        if (!obj) {
             uniqueTransactions.push({
                 name: name,
                 price: price,
