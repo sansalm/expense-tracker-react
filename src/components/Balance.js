@@ -9,8 +9,8 @@ export const Balance = () => {
 
   return (
     <>
-      <h4>Your Balance</h4>
-      <h1>{total} €</h1>
+      <h4>Total cost</h4>
+      <h1>-{total} €</h1>
     </>
   )
 }

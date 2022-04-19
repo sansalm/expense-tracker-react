@@ -4,13 +4,11 @@ import { GlobalContext } from '../context/GlobalState';
 export const Transaction = ({ transaction }) => {
     const { deleteTransaction } = useContext(GlobalContext);
 
-    const sign = transaction.price < 0 ? '-' : '+';
-
     return (
         <li className={transaction.price < 0 ? 'minus' : 'plus'}>
             
             {transaction.name} 
-            <span>{sign}{Math.abs(transaction.price).toFixed(2)} €</span>
+            <span>{Math.abs(transaction.price).toFixed(2)} €</span>
             <span>{transaction.amount} L</span>
             <span>{transaction.distance} km</span>
 
