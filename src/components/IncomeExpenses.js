@@ -25,12 +25,12 @@ export const IncomeExpenses = () => {
 
     const averageCon = ((totalAmounts*100) / totalDist).toFixed(2)
 
-    const averageExp = (totalSum / totalAmounts).toFixed(2);
+    const averageExp = ((totalSum*100) / totalDist).toFixed(2);
 
   return (
       <div className="inc-exp-container">
           <div>
-              <h4>Total amounts</h4>
+              <h4>Total amount</h4>
               <p className="money minus">{totalAmounts} L</p>
           </div>
           <div>
@@ -43,7 +43,7 @@ export const IncomeExpenses = () => {
           </div>
           <div>
               <h4>Average consumption</h4>
-              <p className="money minus">{averageCon} l/100 km</p>
+              <p className="money minus">{averageCon} L/100 km</p>
           </div>
       </div>
   )

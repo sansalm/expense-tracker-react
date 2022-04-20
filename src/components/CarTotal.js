@@ -4,7 +4,7 @@ export const CarTotal = ({ element }) => {
 
     const averageCon = ((element.amount*100) / element.distance).toFixed(2)
 
-    const averageExp = (element.price / element.amount).toFixed(2);
+    const averageExp = ((element.price*100) / element.distance).toFixed(2);
 
     return (
         <li className='plus'>
