@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 
 export const CarTotal = ({ element }) => {
 
-    const averageCon = ((element.amount*100) / element.distance).toFixed(2)
+    const averageCon = ((element.amount*100) / element.distance).toFixed(1);
 
     const averageExp = ((element.price*100) / element.distance).toFixed(2);
 

@@ -16,16 +16,18 @@ export const IncomeExpenses = () => {
     const totalDist = distances
         .filter(item => item > 0)
         .reduce((acc, item) => (acc += item), 0)
-        .toFixed(2);
+        .toFixed(0);
 
     const totalSum = prices
         .filter(item => item > 0)
         .reduce((acc, item) => (acc += item), 0)
         .toFixed(2);
 
-    const averageCon = ((totalAmounts*100) / totalDist).toFixed(2)
+    const averageCon = ((totalAmounts*100) / totalDist).toFixed(1);
 
     const averageExp = ((totalSum*100) / totalDist).toFixed(2);
+
+    const averagePerLiter = (totalSum / totalAmounts).toFixed(2);
 
   return (
       <div className="inc-exp-container">
@@ -39,10 +41,14 @@ export const IncomeExpenses = () => {
           </div>
           <div>
               <h4>Average cost</h4>
+              <p className="money minus">{averagePerLiter} €/L</p>
+          </div>
+          <div>
+              <h4>Average expense</h4>
               <p className="money minus">{averageExp} €/100 km</p>
           </div>
           <div>
-              <h4>Average consumption</h4>
+              <h4>Consumption</h4>
               <p className="money minus">{averageCon} L/100 km</p>
           </div>
       </div>
