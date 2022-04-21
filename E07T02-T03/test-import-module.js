@@ -1,4 +1,5 @@
-import { priceList as pl } from "./price-list.js";
+import { priceList as pl } from "./price-list.js"; // 3b if a feature changes, even if not used, the code needs to be re-compiled
+//import { getPrice, setPriceList } from "./price-list.js"; // 3a better control of imports, problems only if naming changes or something
 
 const examplePriceList = [  
     {
