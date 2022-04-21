@@ -5,9 +5,7 @@ import { NewCar } from './Transaction';
 export const CarSpecs = () => {
     const { cars } = useContext(GlobalContext);
 
-    {cars.map(car => (<NewCar key={car.text} car={car.text} />))}
-
-    
+    //{cars.map(car => (<NewCar key={car.text} car={car.text} />))}
 
     return (
         <>

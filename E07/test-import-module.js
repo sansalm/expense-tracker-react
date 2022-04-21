@@ -25,4 +25,7 @@ const examplePriceList = [
 
 pl.setPriceList(examplePriceList);
 
-console.log(pl.getPrice(2, 130)); // 260 euros    
+console.log('The price for 130 glasses is: ', pl.getPrice(2, 130).toFixed(2), 'euros.'); // 260 euros    
+console.log('The price for 550 cans is: ', pl.getPrice(3, 550).toFixed(2), 'euros.') // 687.5 euros
+console.log('The price for 115 bottles is: ', pl.getPrice(1, 115).toFixed(2), 'euros.'); // 126.5 euros    
+console.log('The price for 75 cans is: ', pl.getPrice(3, 75).toFixed(2), 'euros.') // 112.5 euros
