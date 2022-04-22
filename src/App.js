@@ -14,8 +14,8 @@ function App() {
       <Header />
       <div className='container'>
         <Balance />
-        <CarTotals />
         <IncomeExpenses />
+        <CarTotals />
         <AddTransaction />
         <TransactionList />
       </div>
