@@ -21,12 +21,13 @@ body {
 
 .container {
   margin: 30px auto;
-  width: 350px;
+  width: 1100px;
 }
 
 h1 {
   letter-spacing: 1px;
   margin: 0;
+  padding-top: 10px;
 }
 
 h3 {
@@ -54,8 +55,12 @@ h4 {
   text-align: center;
 }
 
-.inc-exp-container>div:first-of-type {
+.inc-exp-container>div {
   border-right: 1px solid #dedede;
+}
+
+.inc-exp-container>div:last-of-type {
+  border-right: 0px
 }
 
 .money {
@@ -123,7 +128,7 @@ input[type='number'] {
 }
 
 .list li.plus {
-  border-right: 5px solid #2ecc71;
+  border-right: 5px solid #9c88ff;
 }
 
 .list li.minus {
