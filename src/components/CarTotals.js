@@ -30,8 +30,6 @@ export const CarTotals = () => {
         }
     });
 
-    console.log(uniqueTransactions);
-
     return (
         <div>
             <h3>Totals per car</h3>
